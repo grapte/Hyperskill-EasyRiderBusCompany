@@ -1,0 +1,90 @@
+<div class="step-text">
+<p></p><h5 id="description">Description</h5><p>You managed to identify the missing data and catch all the mistakes with the types. However, you noticed that there are multiple problems with suffix names for the stops: sometimes they are incorrect, and sometimes they are simply missing. As if that was not enough, you also realized that there are errors in the arrival times.</p><p>It seems like you have to carefully look at the entire <strong>Format</strong> column in the first part of the <a href="https://stepik.org/media/attachments/lesson/412967/Documentation.jpg" rel="noopener noreferrer nofollow" target="_blank">documentation</a>.</p><p>In this stage, in addition to checking the input for missing data and required types, you will also verify the suffix names for the following three fields: <code class="language-json">stop_name</code>, <code class="language-json">stop_type</code>, and <code class="language-json">a_time</code>. As a result, sum up the errors from both type and field validations as well as format validations, and then display them together.</p><h5 id="objectives">Objectives</h5><ol><li><p>The string containing the data in JSON format is passed to standard input.</p></li><li><p style="text-align: revert;">Check that the data types match and the required fields are filled in as before.</p></li><li><p>Count the number of format errors for <code class="language-json">stop_name</code>, <code class="language-json">stop_type</code>, <code class="language-json">a_time</code> and merge the error counts for the relevant fields.</p></li><li><p>Like in the previous stage, print the information about the number of found errors in total and in each field. Remember that there might be no errors at all.</p></li><li><p>The output should have the same formatting as shown in the example.</p></li></ol><p>If you can't find the necessary information in the stage description, it can probably be found in the attached documentation.</p><p>Note that the time format is military time (24 hours, <code class="language-json">hh:mm</code>). That means that there are certain restrictions:</p><ul><li><p>the first digit cannot be 3, 4, etc.;</p></li><li><p>hours less than 10 should have zero in front of them, e.g. <code class="language-json">08:34</code>; </p></li><li><p>the delimiter should be colon <code class="language-json">:</code>.</p></li></ul><h5 id="example">Example</h5><p>Input:</p><pre><code class="language-json">[
+    {
+        "bus_id": 128,
+        "stop_id": 1,
+        "stop_name": "Prospekt Av.",
+        "next_stop": 3,
+        "stop_type": "S",
+        "a_time": "08:12"
+    },
+    {
+        "bus_id": 128,
+        "stop_id": 3,
+        "stop_name": "Elm Street",
+        "next_stop": 5,
+        "stop_type": "",
+        "a_time": "8:19"
+    },
+    {
+        "bus_id": 128,
+        "stop_id": 5,
+        "stop_name": "Fifth Avenue",
+        "next_stop": 7,
+        "stop_type": "K",
+        "a_time": "08:25"
+    },
+    {
+        "bus_id": 128,
+        "stop_id": "7",
+        "stop_name": "Sesame Street",
+        "next_stop": 0,
+        "stop_type": "F",
+        "a_time": "08:77"
+    },
+    {
+        "bus_id": "",
+        "stop_id": 2,
+        "stop_name": "Pilotow Street",
+        "next_stop": 3,
+        "stop_type": "S",
+        "a_time": "09:20"
+    },
+    {
+        "bus_id": 256,
+        "stop_id": 3,
+        "stop_name": "Elm",
+        "next_stop": 6,
+        "stop_type": "",
+        "a_time": "09:45"
+    },
+    {
+        "bus_id": 256,
+        "stop_id": 6,
+        "stop_name": "Sunset Boulevard",
+        "next_stop": 7,
+        "stop_type": "A",
+        "a_time": "09:59"
+    },
+    {
+        "bus_id": 256,
+        "stop_id": 7,
+        "stop_name": "Sesame Street",
+        "next_stop": "0",
+        "stop_type": "F",
+        "a_time": "10.12"
+    },
+    {
+        "bus_id": 512,
+        "stop_id": 4,
+        "stop_name": "bourbon street",
+        "next_stop": 6,
+        "stop_type": "S",
+        "a_time": "38:13"
+    },
+    {
+        "bus_id": "512",
+        "stop_id": 6,
+        "stop_name": "Sunset Boulevard",
+        "next_stop": 0,
+        "stop_type": "F",
+        "a_time": "08:16"
+    }
+]</code></pre><p>Output:</p><pre><code class="language-no-highlight">Type and field validation: 13 errors
+bus_id: 2
+stop_id: 1
+stop_name: 3
+next_stop: 1
+stop_type: 2
+a_time: 4</code></pre>
+</div>
