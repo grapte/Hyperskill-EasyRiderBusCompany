@@ -1,5 +1,4 @@
 import json
-import sys
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from datetime import datetime
@@ -148,9 +147,6 @@ def main():
     print(f'Transfer stops: {len(transfer_stops)} {transfer_stops}')
     print(f'Finish stops: {len(finish_stops)} {finish_stops}')
     print(f'Finish stops: {len(ondemand_stops)} {ondemand_stops}')
-
-
-
 
 if __name__ == "__main__":
     main()
